@@ -25,8 +25,8 @@ const App = () => {
       <div className="App-body">
         <h1>Enter a Github repo link</h1>
         <GithubUrlInput
-          onRepoNameChange={(name) => handleRepoNameChange(name)}
-          onRepoOwnerChange={(owner) => handleRepoOwnerChange(owner)}
+          onRepoNameChange={handleRepoNameChange}
+          onRepoOwnerChange={handleRepoOwnerChange}
         />
         <RepoInfo repoOwner={repoOwner} repoName={repoName} />
       </div>
