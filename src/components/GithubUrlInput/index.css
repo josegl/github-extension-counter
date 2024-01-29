@@ -1,0 +1,26 @@
+.GithubUrlInput {
+  width: 90%;
+}
+
+input {
+  width: 100%;
+  margin: 0;
+  padding: 1em;
+  border: black solid 1px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.GithubButton {
+  border: black solid 1px;
+  border-radius: 10px;
+  margin-left: 1em;
+}
+
+.error {
+  color: red;
+}
+
+.error input {
+  border: red solid 1px;
+}

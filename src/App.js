@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import logo from "./assets/github-mark-white.svg";
+import "./App.css";
+import GithubUrlInput from "./components/GithubUrlInput";
+import RepoInfo from "./components/RepoInfo";
 
-function App() {
+const App = () => {
+  const [repoName, setRepoName] = useState(null);
+  const [repoOwner, setRepoOwner] = useState(null);
+
+  const handleRepoNameChange = (repoName) => {
+    setRepoName(repoName);
+  };
+
+  const handleRepoOwnerChange = (repoOwner) => {
+    setRepoOwner(repoOwner);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>Github extension reporter</p>
       </header>
+      <div className="App-body">
+        <h1>Enter a Github repo link</h1>
+        <GithubUrlInput
+          onRepoNameChange={(name) => handleRepoNameChange(name)}
+          onRepoOwnerChange={(owner) => handleRepoOwnerChange(owner)}
+        />
+        <RepoInfo repoOwner={repoOwner} repoName={repoName} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
